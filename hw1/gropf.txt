@@ -1,0 +1,3 @@
+ 2012  ./hw1.exe 
+ 2013  gprof ./hw1.exe > hw1.gprof
+ 2015  gprof2dot hw1.gprof | dot -Tpng -o flow.png
