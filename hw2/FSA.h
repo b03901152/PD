@@ -2,6 +2,7 @@
 #define FSA_H
 
 #include "BStarTree.h"
+#include "FloorPlanning.h"
 
 class FSA
 {
@@ -9,27 +10,35 @@ class FSA
     FSA( BStarTree* t )
     {
       tree = t;
-      k = 1;
-      c = 1;
-      prob = 0.99;
-      cost = 0;
-          recur = 0;   
-
+      init();
     }
     ~FSA(){}
     void updateLoop();
     void PseudoGreedyLocalSearch();
     void HillClimbingSearch();
     void HighTempratureRandomSearch();
+    void SA();
+    void perturb();
+    void randomPerturb();
+    void init();
   private:  
     BStarTree*        tree;
-    unsigned          temp; // temperature
-    unsigned          recur; // recursive times
-    unsigned          c; // User-specified parameters
-    unsigned          k; // User-specified parameters
-    double            prob; // uphill climb probability
+    vector<Node*>     bestTreeNodes;
+    double            bestCost;
     double            cost;
-
+    double            temp; // temperature
+    double            feasibleCounter;
+    unsigned          iter; // iteration times
+    double            c; // User-specified parameters, for update temperature
+    double            k; // User-specified parameters, for update temperature
+    double            prob; // uphill climb probability
+    double            totalCost;
+    double            avgDeltaCost; // avg temp change
+    double            T1;
+    double            newCost;
+    double            originCost;
+    double            initCost;
+    double            totalDeltaCost;
 };
 
 #endif

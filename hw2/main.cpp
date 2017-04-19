@@ -9,6 +9,8 @@
 
 using namespace std;
 
+#define _DEBUG
+
 void printRunningTime( clock_t start ) {
   double delta = clock() - start;
   cout<< "Running Time: " <<  delta/CLOCKS_PER_SEC << 's' << endl;
@@ -20,14 +22,14 @@ int main( int argc, char* argv[] )
   srand(time(NULL));
   BStarTree BST;
   // string blockFile = "../input_pa2_ami33.block";
-  cout <<"aaa"<<endl;
-  string blockFile = "./input_pa2/input.block";
-  string netFile = "./input_pa2/input.net";
+  string blockFile = "./input_pa2/ami33.block";
+  string netFile = "./input_pa2/ami33.nets";
 
   BST.parse( blockFile, netFile );
   BST.randonConstructTree();
-  BST.printBST();
+  // BST.printBST();
   // ifs.open( argv[1],ifstream::in );
-  cout <<"aaa";
+  FSA fsa( &BST );
+  fsa.SA();
   printRunningTime( t0 );
 }

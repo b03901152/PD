@@ -93,22 +93,5 @@ void FloorPlanning::parse( string& blockFile, string& netFile )
   }
   ifs.close();
   hash.reset();
-
-  // cout << "nNet" << endl;
-  // for( unsigned i=0; i<nNets; ++i )
-  // {
-  //   cout << Nets[i]->terminals.size() << endl;
-  //   for( unsigned j=0; j<Nets[i]->terminals.size(); ++j )
-  //     cout << Nets[i]->terminals[j]->name << " ";
-  //   cout << endl;
-  // }
-
-  // cout << "nBlock" << endl;
-  // for( unsigned i=0; i<nBlocks; ++i ) {
-  //   cout << Blocks[i]->name << endl;
-  //   for( unsigned j=0; j<Blocks[i]->nets.size(); ++j )
-  //     cout << Blocks[i]->nets[j]->netID << " ";
-  //   cout << endl;
-  // }
 }
 
