@@ -9,27 +9,31 @@
 
 using namespace std;
 
-#define _DEBUG
-
-void printRunningTime( clock_t start ) {
-  double delta = clock() - start;
-  cout<< "Running Time: " <<  delta/CLOCKS_PER_SEC << 's' << endl;
-}
-
 int main( int argc, char* argv[] )
 {  
-  clock_t t0 = clock();
+  clock_t startTime = clock();
   srand(time(NULL));
+  cout << "argc: " << argc << endl;
   BStarTree BST;
-  // string blockFile = "../input_pa2_ami33.block";
-  string blockFile = "./input_pa2/ami33.block";
-  string netFile = "./input_pa2/ami33.nets";
-
+  string blockFile;
+  string netFile;
+  string outputPath;
+  if ( argc == 1 ) {
+    cout << "default path" << endl;
+    blockFile = "./input_pa2/ami33.block";
+    netFile = "./input_pa2/ami33.nets";
+    BST.alpha = 0.5;
+  } else {
+    BST.alpha = stod( (string)argv[1] );
+    blockFile = (string)argv[2];
+    netFile = (string)argv[3];
+    outputPath = (string)argv[4];
+    cout << " blockFile::" << blockFile << endl;
+  }
   BST.parse( blockFile, netFile );
   BST.randonConstructTree();
-  // BST.printBST();
-  // ifs.open( argv[1],ifstream::in );
   FSA fsa( &BST );
   fsa.SA();
-  printRunningTime( t0 );
+  fsa.setStartTime( startTime );
+  fsa.output( outputPath );
 }

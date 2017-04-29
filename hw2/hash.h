@@ -105,7 +105,7 @@ public:
 
    void init() {
       reset(); 
-      _numBuckets = 7000003; 
+      _numBuckets = 100; 
       _buckets = new vector<HashNode>[_numBuckets]; 
    }
    void reset() {

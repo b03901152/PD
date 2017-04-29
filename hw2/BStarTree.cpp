@@ -6,6 +6,14 @@
 #include <math.h> 
 #include "../gnuplot-iostream/gnuplot-iostream.h"
 
+Node& Node::operator = ( const Node& n ) {
+  block = n.block;
+  child[0] = n.child[0];
+  child[1] = n.child[1];
+  parent = n.parent;
+  yContour = n.yContour; 
+  return *this;
+}
 
 void YContour::pop()
 {
@@ -25,15 +33,17 @@ BStarTree::BStarTree():FloorPlanning() {
 }
 
 void BStarTree::randonConstructTree() {
+  cout << "randonConstructTree" << endl;
   random_shuffle( Blocks.begin(), Blocks.end() );
   Nodes.resize( nBlocks );
   for ( unsigned i = 0; i < nBlocks; ++i ) {
     Nodes[i] = new Node;
     Nodes[i]->block = Blocks[i];
-    cout << Nodes[i]->block->name << endl;
-    cout << Blocks[i]->name << endl;
+    #ifdef _DEBUG
+      cout << Nodes[i]->block->name << endl;
+      cout << Blocks[i]->name << endl;
+    #endif
   }
-
   for ( unsigned i = 0; i < nBlocks; ++i ) {
     unsigned idx1 = 2 * i + 1;
     unsigned idx2 = 2 * i + 2;
@@ -45,17 +55,13 @@ void BStarTree::randonConstructTree() {
       Nodes[i]->parent = Nodes[ (i-1) / 2 ];    
   }
   root = Nodes[0];
-
-  cout << "nNodes" << endl;
-  #ifdef _DEBUG
-  for( unsigned i=0; i<nBlocks; ++i )
-    cout << Nodes[i]->block->name << " ";
-  cout << endl;
-  #endif
+  unsigned queueSize = 500;
+  if ( isFeasibleQueue.empty() )
+    for ( unsigned i = 0; i < queueSize; ++i )
+      isFeasibleQueue.push( false );
+  nTrueInQueue = 0;
 }
 
-
-int counter = 0;
 void BStarTree::recursiveBuildTree( Node* n ) {  
   if ( n == NULL ) return;
   n->block->placed = true;
@@ -108,7 +114,6 @@ void BStarTree::recursiveBuildTree( Node* n ) {
         if ( yc == yContourBegin ) break;
     }
 
-    
     YContour* newyc = new YContour;
     newyc->x = n->block->posx + n->block->W;
     newyc->y = yc->pre->y;
@@ -124,16 +129,18 @@ void BStarTree::recursiveBuildTree( Node* n ) {
     }
     n->yContour = n->parent->yContour;
     n->parent->yContour->insertBack( newyc );
+    if ( newyc->x == newyc->post->x )
+      newyc->pop();
   }
   recursiveBuildTree( n->child[0] );
   recursiveBuildTree( n->child[1] );
 
 }
 void BStarTree::rotate( Node* n ) {
+  if ( n->block->W > H || n->block->H > W ) return;
   unsigned i = n->block->W;
   n->block->W = n->block->H;
   n->block->H = i;
-  action->type = 3;
   action->rotateNode = n;
 }
 
@@ -145,12 +152,18 @@ void BStarTree::randomMove() {
   Node* a = Nodes[ rand() % nBlocks ];
   Node* b = Nodes[ rand() % nBlocks ];
   while ( a == b ) {
-    b =  Nodes[ rand() % nBlocks ];
+    b = Nodes[ rand() % nBlocks ];
   }
+  move( a,b );
 }
 
 void BStarTree::move( Node* destination , Node* target ) {
-  action->Nodes = Nodes;
+  if ( action->Nodes.empty() )
+    action->Nodes.resize( Nodes.size() );
+  for ( unsigned i=0; i<Nodes.size(); ++i ) {
+    action->Nodes[i] = *(Nodes[i]);
+  }
+  action->NodePointers = Nodes;
   Block* moveBlock = target->block;
   while ( target->child[0] != NULL || target->child[1] != NULL ) {
     bool r = rand()%2;
@@ -159,17 +172,28 @@ void BStarTree::move( Node* destination , Node* target ) {
     target->block = target->child[r]->block;
     target = target->child[r];
   }
+  if ( target == destination )
+    destination = destination->parent;
+  if ( target->parent->child[0] == target )
+    target->parent->child[0] = NULL;
+  else
+    target->parent->child[1] = NULL;
   bool r = rand()%2;
   target->block = moveBlock;
   target->parent = destination;
   target->child[r] = destination->child[r];
   target->child[!r] = NULL;
+  if ( destination->child[r] != NULL )
+    destination->child[r]->parent = target;
+  destination->child[r] = target;
 }
 
 void BStarTree::swap( Node* a, Node* b ) {
   Block* hold = a->block;
   a->block =  b->block;
   b->block = hold;
+  action->swapNode1 = a;
+  action->swapNode2 = b;
 }
 
 void BStarTree::randomSwap() {
@@ -178,37 +202,48 @@ void BStarTree::randomSwap() {
   while ( a == b ) {
     b = Nodes[ rand() % nBlocks ];
   }
-  action->type = 1;
-  action->swapNode1 = a;
-  action->swapNode2 = b;
   swap( a, b );
 }
 
-unsigned BStarTree::area() {
+void BStarTree::updateIsFeasibleQueue() {
+  feasibleSol += isFeasible;
+  nTrueInQueue += isFeasible;
+  isFeasibleQueue.push( isFeasible );
+  nTrueInQueue -= isFeasibleQueue.front();
+  isFeasibleQueue.pop();
+}
+
+unsigned BStarTree::calcArea() {
   unsigned x;
   unsigned y;
   unsigned maxX = 0;
   unsigned maxY = 0;
-  allNodesInTheOutline = true;
   for ( unsigned i=0; i<nBlocks; ++i ) {
     x = Blocks[i]->posx + Blocks[i]->W;
     y = Blocks[i]->posy + Blocks[i]->H;
     maxX = max( maxX, x );
     maxY = max( maxY, y );
-    if ( x > W || y > H )
-      allNodesInTheOutline = false;
   }
-  return maxX*maxY;
+  isFeasible = ( maxX < W && maxY < H );
+  feasibleSol += isFeasible;
+  runningAlpha = 0.5;
+  // assert( nTrueInQueue <=500 );
+  // unsigned queueSize = 500;
+  // runningAlpha = alphaBase + ( 1 - alphaBase ) * ( 1-(double)nTrueInQueue/queueSize );
+  runningAlpha = alphaBase;
+  MIN_W = maxX;
+  MIN_H = maxY;
+  area = maxX*maxY;
+  return area;
 }
-
-unsigned BStarTree::HPWL() {
-  unsigned HPWL = 0;
+unsigned BStarTree::calcHPWL() {
+  HPWL = 0;
   for ( unsigned i=0; i<nNets; ++i ) {
     unsigned minX = Nets[i]->terminals[0]->posx;
     unsigned minY = Nets[i]->terminals[0]->posy;
     unsigned maxX = Nets[i]->terminals[0]->posx;
     unsigned maxY = Nets[i]->terminals[0]->posy;
-    for ( unsigned j=0; j<Nets[i]->terminals.size(); ++i ) {
+    for ( unsigned j=0, n = Nets[i]->terminals.size(); j < n; ++j ) {
       Terminal* t = Nets[i]->terminals[j];
       minX = min( minX, t->posx );
       minY = min( minY, t->posy );
@@ -226,17 +261,19 @@ unsigned BStarTree::HPWL() {
 }
 
 double BStarTree::runningCost() {
-  unsigned area = area();
-  unsigned HPWL = HPWL();
-  double cost = runningAlpha*area + beta*wirelength;
-  cost += ( 1- runningAlpha - beta ) * 
-  pow( (doubel)W/H-(doubel)maxX/maxY, 2 );
+  calcArea();
+  calcHPWL(); 
+  // double cost = runningAlpha*area/Anorm + beta*HPWL/Wnorm;
+  double areaCost = runningAlpha*area/Anorm;
+  double wireCost = beta*HPWL/Wnorm;
+  double ratioCost = pow( (double)W/H-(double)MIN_W/MIN_H, 2 );
+  double cost =  areaCost + wireCost + ratioCost;
   return cost ;
 }
 
 double BStarTree::realCost() {
-  unsigned area = area();
-  unsigned HPWL = HPWL();
+  calcArea();
+  calcHPWL(); 
   double cost = alpha*area + (1-alpha)*HPWL;
   return cost ;
 }
@@ -254,12 +291,13 @@ void BStarTree::printBST() {
     unsigned y = Blocks[i]->posy;
     unsigned H = Blocks[i]->H;
     unsigned W = Blocks[i]->W;
-    gp << "set object " << i+ << " rect from "
+    gp << "set object " << i+2 << " rect from "
     << x << "," << y 
     << "to " << x + W << "," << y + H 
     << " fc rgb \"white\" " << endl;
 
-    gp << "set label \"" << i+1 << "\" at " << x + W/2 
+    // gp << "set label \"" << Blocks[i]->name << "\" at " << x + W/2 
+    gp << "set label \"" << i << "\" at " << x + W/2 
     << ", " << y + H/2 << endl;
   }
   gp << "set size ratio -1" << endl;
@@ -267,6 +305,7 @@ void BStarTree::printBST() {
   YContour* yc = yContourBegin;
   vector<pair<double, double> > blockBorders;
   while( 1 ) {
+  //   cout << "( " << yc->x << "," << yc->y << " )" << endl;
     blockBorders.push_back( make_pair( yc->x, yc->y ) );
     yc = yc->post;
     if ( yc == yContourBegin ) break;
@@ -278,16 +317,17 @@ void BStarTree::printBST() {
 }
 
 void perturbAction::undo() {
-  cout << "undo type:" << type << endl;
   switch ( type ) {
-    cout << "undo type:" << type << endl;
-    case 1:
+    case 0:
       tree->swap( swapNode1, swapNode2 );
       return;
-    case 2:
-      tree->Nodes = Nodes;
+    case 1:
+      for ( unsigned i=0; i<Nodes.size(); ++i )
+        *( tree->Nodes[i] ) = Nodes[i];
+      tree->Nodes = NodePointers;
       return;
-    case 3:
+    case 2:
       tree->rotate( rotateNode );
+      return;
   }
 }

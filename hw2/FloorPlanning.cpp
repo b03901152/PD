@@ -12,6 +12,8 @@ using namespace std;
 void FloorPlanning::parse( string& blockFile, string& netFile )
 {
   cout << "parse" << endl;
+  cout << "blockFile: " << blockFile << endl;
+  cout << "netFile: " << netFile << endl;
   ifstream ifs;
   string buf;
   // input.block name
