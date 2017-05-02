@@ -1,0 +1,41 @@
+1. 學號：b03901152
+2. 姓名：陳景由
+3. 使用之程式語言：< C++ >
+4. 使用之編譯器：< GNU g++ >
+5. 檔案壓縮方式: <tar cvfz b03901152_pa2.tar.gz b03901152_pa2>
+6. 各檔案說明：
+	 Floorplan.exe : 純文字主程式
+	 visulize : 視窗繪圖程式
+	 Report.pdf ： 程式報告
+
+7. 編譯方式說明：        	
+    主程式：FloorPlan.exe
+	 請在主程式的目錄下，鍵入make指令，即可完成編譯，( Makefile原先下的 Optimize 指令為 -O3 )
+	 在主程式的目錄下會產生一個名為 FloorPlan.exe 的執行檔
+
+8. 執行、使用方式說明：
+   主程式：
+   編譯完成後，在檔案目錄下會產生一個 FSA 的執行檔
+   執行檔的命令格式為：
+   ./FloorPlan.exe [α value] [input.block name] [input.net name] [output file name] 
+
+   視窗繪圖程式：執行檔名為visulize，命令格式與主程式相同
+
+9. 執行結果說明（說明執行結果的觀看方法，及解釋各項數據等）：
+   主程式：
+		total Iteration times: 1					--iteration次數
+		iter: 1
+		total Iteration times: 2
+		iter: 2
+		total Iteration times: 3
+		iter: 3
+		total Iteration times: 4
+		iter: 4
+		...
+		Cost: 701334								--輸出的Cost
+		running time:0.667675						--running time
+
+
+
+
+       
