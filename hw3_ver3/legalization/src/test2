@@ -1,0 +1,53 @@
+        sort_module_order();
+        init();
+        int nRow = (int)_placement.numRows();
+        int counterTest = 0;
+        for(unsigned& moduleID:_ordered_moduleIDs ) {
+            cout << "counterTest: " << counterTest++ << endl;
+            // cout << "moduleID:" << moduleID << endl;
+            double best_delta_cost = numeric_limits<double>::max();
+            double y_g = _cLegal.m_globalLocations[moduleID].y;
+            unsigned y_begin_idx = floor( (y_g - _placement.boundaryBottom()) / _placement.getRowHeight() );
+            bool row_increase = true;
+            unsigned rowCounter = 0;
+            int rowIdx;
+            int best_row_Idx = -1;
+            while(1) {
+                rowIdx = y_begin_idx + ( row_increase ? rowCounter : -rowCounter );
+                // cout << "rowIdx" << rowIdx << endl;
+                // cout << "best_delta_cost" << best_delta_cost << endl;
+                ++rowCounter;
+                if ( rowIdx < 0 || rowIdx == nRow ||
+                 best_delta_cost < pow( _placement.boundaryBottom() + rowIdx * _placement.getRowHeight() - y_g ,2 ) ) {
+                    if ( row_increase )
+                    {
+                        row_increase = false;
+                        rowCounter = 1;
+                        continue;
+                    }
+                    else
+                        break;
+                }
+                if ( _remain_widths[rowIdx] < module(moduleID).width() )
+                    continue;
+                saveRow(rowIdx);
+                placeRow(rowIdx, moduleID);
+                double newCost = rowCost(rowIdx);
+                if ( newCost - _cost[rowIdx] < best_delta_cost ) {
+                    best_delta_cost = newCost - _cost[rowIdx];
+                    best_row_Idx = rowIdx;
+                }
+                restoreRow(rowIdx);
+            }
+            assert(best_row_Idx>=0);
+            placeRow(best_row_Idx, moduleID);
+            _remain_widths[best_row_Idx] -= module(moduleID).width();
+            _cost[best_row_Idx] += best_delta_cost;
+            /////////////////////////////////
+            if (! ( _cost[best_row_Idx] - rowCost(best_row_Idx) < 0.001 ) ){
+                cout << "_cost[best_row_Idx]" << _cost[best_row_Idx] << endl;
+                cout << "rowCost(best_row_Idx)" << rowCost(best_row_Idx) << endl;
+                exit(0);
+            }
+        }
+        setBestPosition();
