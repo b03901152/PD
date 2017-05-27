@@ -3,59 +3,54 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ms/call  ms/call  name    
- 25.00      0.01     0.01   245264     0.00     0.00  std::vector<unsigned int, std::allocator<unsigned int> >::operator=(std::vector<unsigned int, std::allocator<unsigned int> > const&)
- 25.00      0.02     0.01    67682     0.00     0.00  void std::vector<Pin*, std::allocator<Pin*> >::_M_emplace_back_aux<Pin* const&>(Pin* const&)
- 25.00      0.03     0.01        1    10.00    10.00  BookshelfParser::readNetsFile(std::string)
- 25.00      0.04     0.01        1    10.00    20.00  Abucus::Abucus(CLegal&, Placement&)
-  0.00      0.04     0.00    28875     0.00     0.00  std::vector<Cluster, std::allocator<Cluster> >::operator=(std::vector<Cluster, std::allocator<Cluster> > const&)
-  0.00      0.04     0.00    28462     0.00     0.00  void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int const&>(unsigned int const&)
-  0.00      0.04     0.00    12029     0.00     0.00  GnuplotPlotter::addRectangle(Rectangle const&)
-  0.00      0.04     0.00    12029     0.00     0.00  GnuplotLivePlotter::addRectangle(Rectangle const&)
-  0.00      0.04     0.00    12028     0.00     0.00  std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, unsigned int> >, std::string const&)
-  0.00      0.04     0.00     1048     0.00     0.00  void std::vector<Module*, std::allocator<Module*> >::_M_emplace_back_aux<Module*>(Module*&&)
-  0.00      0.04     0.00      736     0.00     0.00  void std::vector<Cluster, std::allocator<Cluster> >::_M_emplace_back_aux<unsigned long>(unsigned long&&)
-  0.00      0.04     0.00      132     0.00     0.00  void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&)
-  0.00      0.04     0.00      132     0.00     0.00  void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double>(double&&)
-  0.00      0.04     0.00      132     0.00     0.00  void std::__introsort_loop<__gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, long, bool (*)(Module*, Module*)>(__gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, __gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, long, bool (*)(Module*, Module*)) [clone .constprop.237]
-  0.00      0.04     0.00       30     0.00     0.00  void std::vector<Rectangle, std::allocator<Rectangle> >::_M_emplace_back_aux<Rectangle const&>(Rectangle const&)
-  0.00      0.04     0.00       15     0.00     0.00  void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int&>(unsigned int&)
-  0.00      0.04     0.00        9     0.00     0.00  void std::vector<Row, std::allocator<Row> >::_M_emplace_back_aux<Row const&>(Row const&)
-  0.00      0.04     0.00        2     0.00     0.00  GnuplotLivePlotter::GnuplotLivePlotter()
-  0.00      0.04     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z14handleArgumentRKiPPcR15CParamPlacement
-  0.00      0.04     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z6formatPKcz
-  0.00      0.04     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN14GnuplotPlotterC2Ev
-  0.00      0.04     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN15BookshelfParserC2ER9Placement
-  0.00      0.04     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN18GnuplotLivePlotterC2Ev
-  0.00      0.04     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN6CLegal5solveEv
-  0.00      0.04     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN9PlacementC2Ev
-  0.00      0.04     0.00        1     0.00     0.00  _GLOBAL__sub_I_gArg
-  0.00      0.04     0.00        1     0.00     0.00  _GLOBAL__sub_I_param
-  0.00      0.04     0.00        1     0.00     0.00  getFileName(std::string)
-  0.00      0.04     0.00        1     0.00     0.00  GnuplotPlotter::outputPlotFile(std::string)
-  0.00      0.04     0.00        1     0.00     0.00  GnuplotPlotter::setTitle(std::string)
-  0.00      0.04     0.00        1     0.00     0.00  GnuplotPlotter::GnuplotPlotter()
-  0.00      0.04     0.00        1     0.00     0.00  BookshelfParser::readPlFile(std::string)
-  0.00      0.04     0.00        1     0.00    20.00  BookshelfParser::readAuxFile(std::string)
-  0.00      0.04     0.00        1     0.00     0.00  BookshelfParser::readSclFile(std::string)
-  0.00      0.04     0.00        1     0.00     0.00  BookshelfParser::readNodesFile(std::string)
-  0.00      0.04     0.00        1     0.00     0.00  BookshelfParser::BookshelfParser(Placement&)
-  0.00      0.04     0.00        1     0.00     0.00  GnuplotLivePlotter::show()
-  0.00      0.04     0.00        1     0.00     0.00  GnuplotLivePlotter::setTitle(std::string)
-  0.00      0.04     0.00        1     0.00     0.00  GnuplotLivePlotter::~GnuplotLivePlotter()
-  0.00      0.04     0.00        1     0.00     0.00  CLegal::check()
-  0.00      0.04     0.00        1     0.00     0.00  Placement::updateDesignStatistics()
-  0.00      0.04     0.00        1     0.00    10.00  Placement::connectPinsWithModulesAndNets()
-  0.00      0.04     0.00        1     0.00     0.00  std::vector<Net, std::allocator<Net> >::_M_default_append(unsigned long)
-  0.00      0.04     0.00        1     0.00     0.00  std::vector<Pin, std::allocator<Pin> >::_M_default_append(unsigned long)
-  0.00      0.04     0.00        1     0.00     0.00  std::vector<Row, std::allocator<Row> >::_M_default_append(unsigned long)
-  0.00      0.04     0.00        1     0.00     0.00  std::vector<Row, std::allocator<Row> >::operator=(std::vector<Row, std::allocator<Row> > const&)
-  0.00      0.04     0.00        1     0.00     0.00  std::vector<Module, std::allocator<Module> >::_M_default_append(unsigned long)
-  0.00      0.04     0.00        1     0.00     0.00  std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > >::_M_default_append(unsigned long)
-  0.00      0.04     0.00        1     0.00     0.00  std::vector<double, std::allocator<double> >::_M_default_append(unsigned long)
-  0.00      0.04     0.00        1     0.00     0.00  std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_unique_pos(std::string const&)
-  0.00      0.04     0.00        1     0.00     0.00  std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned int> >*)
-  0.00      0.04     0.00        1     0.00     0.00  void std::__insertion_sort<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1})
-  0.00      0.04     0.00        1     0.00     0.00  void std::__introsort_loop<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, long, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}, long, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1})
+ 40.48      0.17     0.17        1   170.02   240.02  Abucus::Abucus(CLegal&, Placement&)
+ 28.57      0.29     0.12        1   120.01   120.01  BookshelfParser::readNetsFile(std::string)
+  7.14      0.32     0.03        1    30.00    30.00  Placement::connectPinsWithModulesAndNets()
+  7.14      0.35     0.03  3565006     0.00     0.00  std::vector<unsigned int, std::allocator<unsigned int> >::operator=(std::vector<unsigned int, std::allocator<unsigned int> > const&)
+  7.14      0.38     0.03   447471     0.00     0.00  std::vector<Cluster, std::allocator<Cluster> >::operator=(std::vector<Cluster, std::allocator<Cluster> > const&)
+  2.38      0.39     0.01        1    10.00    10.00  BookshelfParser::readPlFile(std::string)
+  2.38      0.40     0.01        1    10.00    10.00  BookshelfParser::readNodesFile(std::string)
+  2.38      0.41     0.01        1    10.00    10.00  void std::__introsort_loop<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, long, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}, long, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1})
+  2.38      0.42     0.01                             Placement::outputBookshelfFormat(std::string)
+  0.00      0.42     0.00   290606     0.00     0.00  void std::vector<Pin*, std::allocator<Pin*> >::_M_emplace_back_aux<Pin* const&>(Pin* const&)
+  0.00      0.42     0.00   260206     0.00     0.00  void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int const&>(unsigned int const&)
+  0.00      0.42     0.00    51383     0.00     0.00  GnuplotPlotter::addRectangle(Rectangle const&)
+  0.00      0.42     0.00    51382     0.00     0.00  std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, unsigned int> >, std::string const&)
+  0.00      0.42     0.00     2705     0.00     0.00  void std::vector<Cluster, std::allocator<Cluster> >::_M_emplace_back_aux<unsigned long>(unsigned long&&)
+  0.00      0.42     0.00      246     0.00     0.00  void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&)
+  0.00      0.42     0.00      246     0.00     0.00  void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double>(double&&)
+  0.00      0.42     0.00       17     0.00     0.00  void std::vector<Rectangle, std::allocator<Rectangle> >::_M_emplace_back_aux<Rectangle const&>(Rectangle const&)
+  0.00      0.42     0.00       17     0.00     0.00  void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int&>(unsigned int&)
+  0.00      0.42     0.00        9     0.00     0.00  void std::vector<Row, std::allocator<Row> >::_M_emplace_back_aux<Row const&>(Row const&)
+  0.00      0.42     0.00        2     0.00     0.00  std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > >::_M_default_append(unsigned long)
+  0.00      0.42     0.00        2     0.00     0.00  std::vector<double, std::allocator<double> >::_M_default_append(unsigned long)
+  0.00      0.42     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z14handleArgumentRKiPPcR15CParamPlacement
+  0.00      0.42     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z6formatPKcz
+  0.00      0.42     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN14GnuplotPlotterC2Ev
+  0.00      0.42     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN15BookshelfParserC2ER9Placement
+  0.00      0.42     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN18GnuplotLivePlotterC2Ev
+  0.00      0.42     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN6CLegal5solveEv
+  0.00      0.42     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN9PlacementC2Ev
+  0.00      0.42     0.00        1     0.00     0.00  _GLOBAL__sub_I_gArg
+  0.00      0.42     0.00        1     0.00     0.00  _GLOBAL__sub_I_param
+  0.00      0.42     0.00        1     0.00     0.00  getFileName(std::string)
+  0.00      0.42     0.00        1     0.00     0.00  GnuplotPlotter::outputPlotFile(std::string)
+  0.00      0.42     0.00        1     0.00     0.00  GnuplotPlotter::setTitle(std::string)
+  0.00      0.42     0.00        1     0.00     0.00  GnuplotPlotter::GnuplotPlotter()
+  0.00      0.42     0.00        1     0.00   170.02  BookshelfParser::readAuxFile(std::string)
+  0.00      0.42     0.00        1     0.00     0.00  BookshelfParser::readSclFile(std::string)
+  0.00      0.42     0.00        1     0.00     0.00  BookshelfParser::BookshelfParser(Placement&)
+  0.00      0.42     0.00        1     0.00     0.00  GnuplotLivePlotter::GnuplotLivePlotter()
+  0.00      0.42     0.00        1     0.00     0.00  Placement::updateDesignStatistics()
+  0.00      0.42     0.00        1     0.00     0.00  std::vector<Net, std::allocator<Net> >::_M_default_append(unsigned long)
+  0.00      0.42     0.00        1     0.00     0.00  std::vector<Pin, std::allocator<Pin> >::_M_default_append(unsigned long)
+  0.00      0.42     0.00        1     0.00     0.00  std::vector<Row, std::allocator<Row> >::_M_default_append(unsigned long)
+  0.00      0.42     0.00        1     0.00     0.00  std::vector<Row, std::allocator<Row> >::operator=(std::vector<Row, std::allocator<Row> > const&)
+  0.00      0.42     0.00        1     0.00     0.00  std::vector<Module, std::allocator<Module> >::_M_default_append(unsigned long)
+  0.00      0.42     0.00        1     0.00     0.00  std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > >::operator=(std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > > const&)
+  0.00      0.42     0.00        1     0.00     0.00  std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_unique_pos(std::string const&)
+  0.00      0.42     0.00        1     0.00     0.00  std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned int> >*)
+  0.00      0.42     0.00        1     0.00     0.00  void std::__insertion_sort<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1})
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -93,222 +88,195 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 2 byte(s) for 25.00% of 0.04 seconds
+granularity: each sample hit covers 2 byte(s) for 2.38% of 0.42 seconds
 
 index % time    self  children    called     name
-                0.00    0.02       1/1           Placement::readBookshelfFormat(std::string, std::string) [4]
-[1]     50.0    0.00    0.02       1         BookshelfParser::readAuxFile(std::string) [1]
-                0.01    0.00       1/1           BookshelfParser::readNetsFile(std::string) [7]
-                0.00    0.01       1/1           Placement::connectPinsWithModulesAndNets() [8]
-                0.00    0.00       1/1           BookshelfParser::readSclFile(std::string) [45]
-                0.00    0.00       1/1           BookshelfParser::readNodesFile(std::string) [46]
-                0.00    0.00       1/1           BookshelfParser::readPlFile(std::string) [44]
------------------------------------------------
-                0.01    0.01       1/1           CLegal::solve() [3]
-[2]     50.0    0.01    0.01       1         Abucus::Abucus(CLegal&, Placement&) [2]
-                0.00    0.01   28875/28875       std::vector<Cluster, std::allocator<Cluster> >::operator=(std::vector<Cluster, std::allocator<Cluster> > const&) [9]
-                0.00    0.00   19295/245264      std::vector<unsigned int, std::allocator<unsigned int> >::operator=(std::vector<unsigned int, std::allocator<unsigned int> > const&) [5]
-                0.00    0.00   28462/28462       void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int const&>(unsigned int const&) [18]
-                0.00    0.00     736/736         void std::vector<Cluster, std::allocator<Cluster> >::_M_emplace_back_aux<unsigned long>(unsigned long&&) [23]
-                0.00    0.00      15/15          void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int&>(unsigned int&) [28]
-                0.00    0.00       1/1           std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > >::_M_default_append(unsigned long) [58]
-                0.00    0.00       1/1           std::vector<double, std::allocator<double> >::_M_default_append(unsigned long) [59]
-                0.00    0.00       1/1           void std::__introsort_loop<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, long, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}, long, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}) [63]
-                0.00    0.00       1/1           void std::__insertion_sort<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}) [62]
+                0.17    0.07       1/1           CLegal::solve() [2]
+[1]     57.1    0.17    0.07       1         Abucus::Abucus(CLegal&, Placement&) [1]
+                0.03    0.03  447471/447471      std::vector<Cluster, std::allocator<Cluster> >::operator=(std::vector<Cluster, std::allocator<Cluster> > const&) [6]
+                0.01    0.00       1/1           void std::__introsort_loop<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, long, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}, long, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}) [11]
+                0.00    0.00  356536/3565006     std::vector<unsigned int, std::allocator<unsigned int> >::operator=(std::vector<unsigned int, std::allocator<unsigned int> > const&) [8]
+                0.00    0.00  260206/260206      void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int const&>(unsigned int const&) [22]
+                0.00    0.00    2705/2705        void std::vector<Cluster, std::allocator<Cluster> >::_M_emplace_back_aux<unsigned long>(unsigned long&&) [25]
+                0.00    0.00      17/17          void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int&>(unsigned int&) [29]
+                0.00    0.00       2/2           std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > >::_M_default_append(unsigned long) [31]
+                0.00    0.00       2/2           std::vector<double, std::allocator<double> >::_M_default_append(unsigned long) [32]
+                0.00    0.00       1/1           void std::__insertion_sort<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}) [58]
+                0.00    0.00       1/1           std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > >::operator=(std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > > const&) [55]
 -----------------------------------------------
                                                  <spontaneous>
-[3]     50.0    0.00    0.02                 CLegal::solve() [3]
-                0.01    0.01       1/1           Abucus::Abucus(CLegal&, Placement&) [2]
-                0.00    0.00   12029/12029       GnuplotLivePlotter::addRectangle(Rectangle const&) [20]
-                0.00    0.00      15/30          void std::vector<Rectangle, std::allocator<Rectangle> >::_M_emplace_back_aux<Rectangle const&>(Rectangle const&) [27]
-                0.00    0.00       1/2           GnuplotLivePlotter::GnuplotLivePlotter() [30]
-                0.00    0.00       1/1           GnuplotLivePlotter::setTitle(std::string) [49]
-                0.00    0.00       1/1           GnuplotLivePlotter::show() [48]
-                0.00    0.00       1/1           CLegal::check() [51]
-                0.00    0.00       1/1           GnuplotLivePlotter::~GnuplotLivePlotter() [50]
+[2]     57.1    0.00    0.24                 CLegal::solve() [2]
+                0.17    0.07       1/1           Abucus::Abucus(CLegal&, Placement&) [1]
+-----------------------------------------------
+                0.00    0.17       1/1           Placement::readBookshelfFormat(std::string, std::string) [4]
+[3]     40.5    0.00    0.17       1         BookshelfParser::readAuxFile(std::string) [3]
+                0.12    0.00       1/1           BookshelfParser::readNetsFile(std::string) [5]
+                0.03    0.00       1/1           Placement::connectPinsWithModulesAndNets() [7]
+                0.01    0.00       1/1           BookshelfParser::readNodesFile(std::string) [10]
+                0.01    0.00       1/1           BookshelfParser::readPlFile(std::string) [9]
+                0.00    0.00       1/1           BookshelfParser::readSclFile(std::string) [46]
 -----------------------------------------------
                                                  <spontaneous>
-[4]     50.0    0.00    0.02                 Placement::readBookshelfFormat(std::string, std::string) [4]
-                0.00    0.02       1/1           BookshelfParser::readAuxFile(std::string) [1]
-                0.00    0.00       1/1           getFileName(std::string) [40]
+[4]     40.5    0.00    0.17                 Placement::readBookshelfFormat(std::string, std::string) [4]
+                0.00    0.17       1/1           BookshelfParser::readAuxFile(std::string) [3]
+                0.00    0.00       1/1           getFileName(std::string) [42]
                 0.00    0.00       1/1           BookshelfParser::BookshelfParser(Placement&) [47]
-                0.00    0.00       1/1           Placement::updateDesignStatistics() [52]
-                0.00    0.00       1/1           std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned int> >*) [61]
+                0.00    0.00       1/1           Placement::updateDesignStatistics() [49]
+                0.00    0.00       1/1           std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned int> >*) [57]
 -----------------------------------------------
-                0.00    0.00   19295/245264      Abucus::Abucus(CLegal&, Placement&) [2]
-                0.01    0.00  225969/245264      std::vector<Cluster, std::allocator<Cluster> >::operator=(std::vector<Cluster, std::allocator<Cluster> > const&) [9]
-[5]     25.0    0.01    0.00  245264         std::vector<unsigned int, std::allocator<unsigned int> >::operator=(std::vector<unsigned int, std::allocator<unsigned int> > const&) [5]
+                0.12    0.00       1/1           BookshelfParser::readAuxFile(std::string) [3]
+[5]     28.6    0.12    0.00       1         BookshelfParser::readNetsFile(std::string) [5]
+                0.00    0.00       1/1           std::vector<Net, std::allocator<Net> >::_M_default_append(unsigned long) [50]
+                0.00    0.00       1/1           std::vector<Pin, std::allocator<Pin> >::_M_default_append(unsigned long) [51]
 -----------------------------------------------
-                0.01    0.00   67682/67682       Placement::connectPinsWithModulesAndNets() [8]
-[6]     25.0    0.01    0.00   67682         void std::vector<Pin*, std::allocator<Pin*> >::_M_emplace_back_aux<Pin* const&>(Pin* const&) [6]
+                0.03    0.03  447471/447471      Abucus::Abucus(CLegal&, Placement&) [1]
+[6]     13.6    0.03    0.03  447471         std::vector<Cluster, std::allocator<Cluster> >::operator=(std::vector<Cluster, std::allocator<Cluster> > const&) [6]
+                0.03    0.00 3208470/3565006     std::vector<unsigned int, std::allocator<unsigned int> >::operator=(std::vector<unsigned int, std::allocator<unsigned int> > const&) [8]
 -----------------------------------------------
-                0.01    0.00       1/1           BookshelfParser::readAuxFile(std::string) [1]
-[7]     25.0    0.01    0.00       1         BookshelfParser::readNetsFile(std::string) [7]
-                0.00    0.00       1/1           std::vector<Net, std::allocator<Net> >::_M_default_append(unsigned long) [53]
-                0.00    0.00       1/1           std::vector<Pin, std::allocator<Pin> >::_M_default_append(unsigned long) [54]
+                0.03    0.00       1/1           BookshelfParser::readAuxFile(std::string) [3]
+[7]      7.1    0.03    0.00       1         Placement::connectPinsWithModulesAndNets() [7]
+                0.00    0.00  290606/290606      void std::vector<Pin*, std::allocator<Pin*> >::_M_emplace_back_aux<Pin* const&>(Pin* const&) [21]
 -----------------------------------------------
-                0.00    0.01       1/1           BookshelfParser::readAuxFile(std::string) [1]
-[8]     25.0    0.00    0.01       1         Placement::connectPinsWithModulesAndNets() [8]
-                0.01    0.00   67682/67682       void std::vector<Pin*, std::allocator<Pin*> >::_M_emplace_back_aux<Pin* const&>(Pin* const&) [6]
+                0.00    0.00  356536/3565006     Abucus::Abucus(CLegal&, Placement&) [1]
+                0.03    0.00 3208470/3565006     std::vector<Cluster, std::allocator<Cluster> >::operator=(std::vector<Cluster, std::allocator<Cluster> > const&) [6]
+[8]      7.1    0.03    0.00 3565006         std::vector<unsigned int, std::allocator<unsigned int> >::operator=(std::vector<unsigned int, std::allocator<unsigned int> > const&) [8]
 -----------------------------------------------
-                0.00    0.01   28875/28875       Abucus::Abucus(CLegal&, Placement&) [2]
-[9]     23.0    0.00    0.01   28875         std::vector<Cluster, std::allocator<Cluster> >::operator=(std::vector<Cluster, std::allocator<Cluster> > const&) [9]
-                0.01    0.00  225969/245264      std::vector<unsigned int, std::allocator<unsigned int> >::operator=(std::vector<unsigned int, std::allocator<unsigned int> > const&) [5]
+                0.01    0.00       1/1           BookshelfParser::readAuxFile(std::string) [3]
+[9]      2.4    0.01    0.00       1         BookshelfParser::readPlFile(std::string) [9]
 -----------------------------------------------
-                0.00    0.00   28462/28462       Abucus::Abucus(CLegal&, Placement&) [2]
-[18]     0.0    0.00    0.00   28462         void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int const&>(unsigned int const&) [18]
+                0.01    0.00       1/1           BookshelfParser::readAuxFile(std::string) [3]
+[10]     2.4    0.01    0.00       1         BookshelfParser::readNodesFile(std::string) [10]
+                0.00    0.00   51382/51382       std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, unsigned int> >, std::string const&) [24]
+                0.00    0.00       1/1           std::vector<Module, std::allocator<Module> >::_M_default_append(unsigned long) [54]
 -----------------------------------------------
-                0.00    0.00   12029/12029       Placement::outputGnuplotFigure(std::string) [96]
-[19]     0.0    0.00    0.00   12029         GnuplotPlotter::addRectangle(Rectangle const&) [19]
+                                5322             void std::__introsort_loop<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, long, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}, long, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}) [11]
+                0.01    0.00       1/1           Abucus::Abucus(CLegal&, Placement&) [1]
+[11]     2.4    0.01    0.00       1+5322    void std::__introsort_loop<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, long, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}, long, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}) [11]
+                                5322             void std::__introsort_loop<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, long, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}, long, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}) [11]
 -----------------------------------------------
-                0.00    0.00   12029/12029       CLegal::solve() [3]
-[20]     0.0    0.00    0.00   12029         GnuplotLivePlotter::addRectangle(Rectangle const&) [20]
+                                                 <spontaneous>
+[12]     2.4    0.01    0.00                 Placement::outputBookshelfFormat(std::string) [12]
 -----------------------------------------------
-                0.00    0.00   12028/12028       BookshelfParser::readNodesFile(std::string) [46]
-[21]     0.0    0.00    0.00   12028         std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, unsigned int> >, std::string const&) [21]
-                0.00    0.00       1/1           std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_unique_pos(std::string const&) [60]
+                0.00    0.00  290606/290606      Placement::connectPinsWithModulesAndNets() [7]
+[21]     0.0    0.00    0.00  290606         void std::vector<Pin*, std::allocator<Pin*> >::_M_emplace_back_aux<Pin* const&>(Pin* const&) [21]
 -----------------------------------------------
-                0.00    0.00    1048/1048        CLegal::check() [51]
-[22]     0.0    0.00    0.00    1048         void std::vector<Module*, std::allocator<Module*> >::_M_emplace_back_aux<Module*>(Module*&&) [22]
+                0.00    0.00  260206/260206      Abucus::Abucus(CLegal&, Placement&) [1]
+[22]     0.0    0.00    0.00  260206         void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int const&>(unsigned int const&) [22]
 -----------------------------------------------
-                0.00    0.00     736/736         Abucus::Abucus(CLegal&, Placement&) [2]
-[23]     0.0    0.00    0.00     736         void std::vector<Cluster, std::allocator<Cluster> >::_M_emplace_back_aux<unsigned long>(unsigned long&&) [23]
+                0.00    0.00   51383/51383       Placement::outputGnuplotFigure(std::string) [96]
+[23]     0.0    0.00    0.00   51383         GnuplotPlotter::addRectangle(Rectangle const&) [23]
 -----------------------------------------------
-                0.00    0.00     132/132         BookshelfParser::readSclFile(std::string) [45]
-[24]     0.0    0.00    0.00     132         void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&) [24]
+                0.00    0.00   51382/51382       BookshelfParser::readNodesFile(std::string) [10]
+[24]     0.0    0.00    0.00   51382         std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, unsigned int> >, std::string const&) [24]
+                0.00    0.00       1/1           std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_unique_pos(std::string const&) [56]
 -----------------------------------------------
-                0.00    0.00     132/132         BookshelfParser::readSclFile(std::string) [45]
-[25]     0.0    0.00    0.00     132         void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double>(double&&) [25]
+                0.00    0.00    2705/2705        Abucus::Abucus(CLegal&, Placement&) [1]
+[25]     0.0    0.00    0.00    2705         void std::vector<Cluster, std::allocator<Cluster> >::_M_emplace_back_aux<unsigned long>(unsigned long&&) [25]
 -----------------------------------------------
-                                1113             void std::__introsort_loop<__gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, long, bool (*)(Module*, Module*)>(__gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, __gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, long, bool (*)(Module*, Module*)) [clone .constprop.237] [26]
-                0.00    0.00     132/132         CLegal::check() [51]
-[26]     0.0    0.00    0.00     132+1113    void std::__introsort_loop<__gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, long, bool (*)(Module*, Module*)>(__gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, __gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, long, bool (*)(Module*, Module*)) [clone .constprop.237] [26]
-                                1113             void std::__introsort_loop<__gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, long, bool (*)(Module*, Module*)>(__gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, __gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, long, bool (*)(Module*, Module*)) [clone .constprop.237] [26]
+                0.00    0.00     246/246         BookshelfParser::readSclFile(std::string) [46]
+[26]     0.0    0.00    0.00     246         void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&) [26]
 -----------------------------------------------
-                0.00    0.00      15/30          CLegal::solve() [3]
-                0.00    0.00      15/30          Placement::outputGnuplotFigure(std::string) [96]
-[27]     0.0    0.00    0.00      30         void std::vector<Rectangle, std::allocator<Rectangle> >::_M_emplace_back_aux<Rectangle const&>(Rectangle const&) [27]
+                0.00    0.00     246/246         BookshelfParser::readSclFile(std::string) [46]
+[27]     0.0    0.00    0.00     246         void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double>(double&&) [27]
 -----------------------------------------------
-                0.00    0.00      15/15          Abucus::Abucus(CLegal&, Placement&) [2]
-[28]     0.0    0.00    0.00      15         void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int&>(unsigned int&) [28]
+                0.00    0.00      17/17          Placement::outputGnuplotFigure(std::string) [96]
+[28]     0.0    0.00    0.00      17         void std::vector<Rectangle, std::allocator<Rectangle> >::_M_emplace_back_aux<Rectangle const&>(Rectangle const&) [28]
 -----------------------------------------------
-                0.00    0.00       9/9           Placement::updateDesignStatistics() [52]
-[29]     0.0    0.00    0.00       9         void std::vector<Row, std::allocator<Row> >::_M_emplace_back_aux<Row const&>(Row const&) [29]
+                0.00    0.00      17/17          Abucus::Abucus(CLegal&, Placement&) [1]
+[29]     0.0    0.00    0.00      17         void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int&>(unsigned int&) [29]
 -----------------------------------------------
-                0.00    0.00       1/2           CLegal::CLegal(Placement&) [89]
-                0.00    0.00       1/2           CLegal::solve() [3]
-[30]     0.0    0.00    0.00       2         GnuplotLivePlotter::GnuplotLivePlotter() [30]
+                0.00    0.00       9/9           Placement::updateDesignStatistics() [49]
+[30]     0.0    0.00    0.00       9         void std::vector<Row, std::allocator<Row> >::_M_emplace_back_aux<Row const&>(Row const&) [30]
 -----------------------------------------------
-                0.00    0.00       1/1           __libc_csu_init [115]
-[31]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z14handleArgumentRKiPPcR15CParamPlacement [31]
+                0.00    0.00       2/2           Abucus::Abucus(CLegal&, Placement&) [1]
+[31]     0.0    0.00    0.00       2         std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > >::_M_default_append(unsigned long) [31]
 -----------------------------------------------
-                0.00    0.00       1/1           __libc_csu_init [115]
-[32]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z6formatPKcz [32]
+                0.00    0.00       2/2           Abucus::Abucus(CLegal&, Placement&) [1]
+[32]     0.0    0.00    0.00       2         std::vector<double, std::allocator<double> >::_M_default_append(unsigned long) [32]
 -----------------------------------------------
-                0.00    0.00       1/1           __libc_csu_init [115]
-[33]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN14GnuplotPlotterC2Ev [33]
+                0.00    0.00       1/1           __libc_csu_init [118]
+[33]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z14handleArgumentRKiPPcR15CParamPlacement [33]
 -----------------------------------------------
-                0.00    0.00       1/1           __libc_csu_init [115]
-[34]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN15BookshelfParserC2ER9Placement [34]
+                0.00    0.00       1/1           __libc_csu_init [118]
+[34]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z6formatPKcz [34]
 -----------------------------------------------
-                0.00    0.00       1/1           __libc_csu_init [115]
-[35]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN18GnuplotLivePlotterC2Ev [35]
+                0.00    0.00       1/1           __libc_csu_init [118]
+[35]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN14GnuplotPlotterC2Ev [35]
 -----------------------------------------------
-                0.00    0.00       1/1           __libc_csu_init [115]
-[36]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN6CLegal5solveEv [36]
+                0.00    0.00       1/1           __libc_csu_init [118]
+[36]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN15BookshelfParserC2ER9Placement [36]
 -----------------------------------------------
-                0.00    0.00       1/1           __libc_csu_init [115]
-[37]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN9PlacementC2Ev [37]
+                0.00    0.00       1/1           __libc_csu_init [118]
+[37]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN18GnuplotLivePlotterC2Ev [37]
 -----------------------------------------------
-                0.00    0.00       1/1           __libc_csu_init [115]
-[38]     0.0    0.00    0.00       1         _GLOBAL__sub_I_gArg [38]
+                0.00    0.00       1/1           __libc_csu_init [118]
+[38]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN6CLegal5solveEv [38]
 -----------------------------------------------
-                0.00    0.00       1/1           __libc_csu_init [115]
-[39]     0.0    0.00    0.00       1         _GLOBAL__sub_I_param [39]
+                0.00    0.00       1/1           __libc_csu_init [118]
+[39]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN9PlacementC2Ev [39]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [118]
+[40]     0.0    0.00    0.00       1         _GLOBAL__sub_I_gArg [40]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [118]
+[41]     0.0    0.00    0.00       1         _GLOBAL__sub_I_param [41]
 -----------------------------------------------
                 0.00    0.00       1/1           Placement::readBookshelfFormat(std::string, std::string) [4]
-[40]     0.0    0.00    0.00       1         getFileName(std::string) [40]
+[42]     0.0    0.00    0.00       1         getFileName(std::string) [42]
 -----------------------------------------------
                 0.00    0.00       1/1           Placement::outputGnuplotFigure(std::string) [96]
-[41]     0.0    0.00    0.00       1         GnuplotPlotter::outputPlotFile(std::string) [41]
+[43]     0.0    0.00    0.00       1         GnuplotPlotter::outputPlotFile(std::string) [43]
 -----------------------------------------------
                 0.00    0.00       1/1           Placement::outputGnuplotFigure(std::string) [96]
-[42]     0.0    0.00    0.00       1         GnuplotPlotter::setTitle(std::string) [42]
+[44]     0.0    0.00    0.00       1         GnuplotPlotter::setTitle(std::string) [44]
 -----------------------------------------------
                 0.00    0.00       1/1           Placement::outputGnuplotFigure(std::string) [96]
-[43]     0.0    0.00    0.00       1         GnuplotPlotter::GnuplotPlotter() [43]
+[45]     0.0    0.00    0.00       1         GnuplotPlotter::GnuplotPlotter() [45]
 -----------------------------------------------
-                0.00    0.00       1/1           BookshelfParser::readAuxFile(std::string) [1]
-[44]     0.0    0.00    0.00       1         BookshelfParser::readPlFile(std::string) [44]
------------------------------------------------
-                0.00    0.00       1/1           BookshelfParser::readAuxFile(std::string) [1]
-[45]     0.0    0.00    0.00       1         BookshelfParser::readSclFile(std::string) [45]
-                0.00    0.00     132/132         void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double>(double&&) [25]
-                0.00    0.00     132/132         void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&) [24]
-                0.00    0.00       1/1           std::vector<Row, std::allocator<Row> >::_M_default_append(unsigned long) [55]
------------------------------------------------
-                0.00    0.00       1/1           BookshelfParser::readAuxFile(std::string) [1]
-[46]     0.0    0.00    0.00       1         BookshelfParser::readNodesFile(std::string) [46]
-                0.00    0.00   12028/12028       std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, unsigned int> >, std::string const&) [21]
-                0.00    0.00       1/1           std::vector<Module, std::allocator<Module> >::_M_default_append(unsigned long) [57]
+                0.00    0.00       1/1           BookshelfParser::readAuxFile(std::string) [3]
+[46]     0.0    0.00    0.00       1         BookshelfParser::readSclFile(std::string) [46]
+                0.00    0.00     246/246         void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double>(double&&) [27]
+                0.00    0.00     246/246         void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&) [26]
+                0.00    0.00       1/1           std::vector<Row, std::allocator<Row> >::_M_default_append(unsigned long) [52]
 -----------------------------------------------
                 0.00    0.00       1/1           Placement::readBookshelfFormat(std::string, std::string) [4]
 [47]     0.0    0.00    0.00       1         BookshelfParser::BookshelfParser(Placement&) [47]
 -----------------------------------------------
-                0.00    0.00       1/1           CLegal::solve() [3]
-[48]     0.0    0.00    0.00       1         GnuplotLivePlotter::show() [48]
------------------------------------------------
-                0.00    0.00       1/1           CLegal::solve() [3]
-[49]     0.0    0.00    0.00       1         GnuplotLivePlotter::setTitle(std::string) [49]
------------------------------------------------
-                0.00    0.00       1/1           CLegal::solve() [3]
-[50]     0.0    0.00    0.00       1         GnuplotLivePlotter::~GnuplotLivePlotter() [50]
------------------------------------------------
-                0.00    0.00       1/1           CLegal::solve() [3]
-[51]     0.0    0.00    0.00       1         CLegal::check() [51]
-                0.00    0.00    1048/1048        void std::vector<Module*, std::allocator<Module*> >::_M_emplace_back_aux<Module*>(Module*&&) [22]
-                0.00    0.00     132/132         void std::__introsort_loop<__gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, long, bool (*)(Module*, Module*)>(__gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, __gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, long, bool (*)(Module*, Module*)) [clone .constprop.237] [26]
+                0.00    0.00       1/1           CLegal::CLegal(Placement&) [89]
+[48]     0.0    0.00    0.00       1         GnuplotLivePlotter::GnuplotLivePlotter() [48]
 -----------------------------------------------
                 0.00    0.00       1/1           Placement::readBookshelfFormat(std::string, std::string) [4]
-[52]     0.0    0.00    0.00       1         Placement::updateDesignStatistics() [52]
-                0.00    0.00       9/9           void std::vector<Row, std::allocator<Row> >::_M_emplace_back_aux<Row const&>(Row const&) [29]
+[49]     0.0    0.00    0.00       1         Placement::updateDesignStatistics() [49]
+                0.00    0.00       9/9           void std::vector<Row, std::allocator<Row> >::_M_emplace_back_aux<Row const&>(Row const&) [30]
 -----------------------------------------------
-                0.00    0.00       1/1           BookshelfParser::readNetsFile(std::string) [7]
-[53]     0.0    0.00    0.00       1         std::vector<Net, std::allocator<Net> >::_M_default_append(unsigned long) [53]
+                0.00    0.00       1/1           BookshelfParser::readNetsFile(std::string) [5]
+[50]     0.0    0.00    0.00       1         std::vector<Net, std::allocator<Net> >::_M_default_append(unsigned long) [50]
 -----------------------------------------------
-                0.00    0.00       1/1           BookshelfParser::readNetsFile(std::string) [7]
-[54]     0.0    0.00    0.00       1         std::vector<Pin, std::allocator<Pin> >::_M_default_append(unsigned long) [54]
+                0.00    0.00       1/1           BookshelfParser::readNetsFile(std::string) [5]
+[51]     0.0    0.00    0.00       1         std::vector<Pin, std::allocator<Pin> >::_M_default_append(unsigned long) [51]
 -----------------------------------------------
-                0.00    0.00       1/1           BookshelfParser::readSclFile(std::string) [45]
-[55]     0.0    0.00    0.00       1         std::vector<Row, std::allocator<Row> >::_M_default_append(unsigned long) [55]
+                0.00    0.00       1/1           BookshelfParser::readSclFile(std::string) [46]
+[52]     0.0    0.00    0.00       1         std::vector<Row, std::allocator<Row> >::_M_default_append(unsigned long) [52]
 -----------------------------------------------
                 0.00    0.00       1/1           CLegal::CLegal(Placement&) [89]
-[56]     0.0    0.00    0.00       1         std::vector<Row, std::allocator<Row> >::operator=(std::vector<Row, std::allocator<Row> > const&) [56]
+[53]     0.0    0.00    0.00       1         std::vector<Row, std::allocator<Row> >::operator=(std::vector<Row, std::allocator<Row> > const&) [53]
 -----------------------------------------------
-                0.00    0.00       1/1           BookshelfParser::readNodesFile(std::string) [46]
-[57]     0.0    0.00    0.00       1         std::vector<Module, std::allocator<Module> >::_M_default_append(unsigned long) [57]
+                0.00    0.00       1/1           BookshelfParser::readNodesFile(std::string) [10]
+[54]     0.0    0.00    0.00       1         std::vector<Module, std::allocator<Module> >::_M_default_append(unsigned long) [54]
 -----------------------------------------------
-                0.00    0.00       1/1           Abucus::Abucus(CLegal&, Placement&) [2]
-[58]     0.0    0.00    0.00       1         std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > >::_M_default_append(unsigned long) [58]
+                0.00    0.00       1/1           Abucus::Abucus(CLegal&, Placement&) [1]
+[55]     0.0    0.00    0.00       1         std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > >::operator=(std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > > const&) [55]
 -----------------------------------------------
-                0.00    0.00       1/1           Abucus::Abucus(CLegal&, Placement&) [2]
-[59]     0.0    0.00    0.00       1         std::vector<double, std::allocator<double> >::_M_default_append(unsigned long) [59]
+                0.00    0.00       1/1           std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, unsigned int> >, std::string const&) [24]
+[56]     0.0    0.00    0.00       1         std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_unique_pos(std::string const&) [56]
 -----------------------------------------------
-                0.00    0.00       1/1           std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, unsigned int> >, std::string const&) [21]
-[60]     0.0    0.00    0.00       1         std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_unique_pos(std::string const&) [60]
------------------------------------------------
-                                1417             std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned int> >*) [61]
+                                7619             std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned int> >*) [57]
                 0.00    0.00       1/1           Placement::readBookshelfFormat(std::string, std::string) [4]
-[61]     0.0    0.00    0.00       1+1417    std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned int> >*) [61]
-                                1417             std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned int> >*) [61]
+[57]     0.0    0.00    0.00       1+7619    std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned int> >*) [57]
+                                7619             std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned int> >*) [57]
 -----------------------------------------------
-                0.00    0.00       1/1           Abucus::Abucus(CLegal&, Placement&) [2]
-[62]     0.0    0.00    0.00       1         void std::__insertion_sort<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}) [62]
------------------------------------------------
-                                1235             void std::__introsort_loop<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, long, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}, long, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}) [63]
-                0.00    0.00       1/1           Abucus::Abucus(CLegal&, Placement&) [2]
-[63]     0.0    0.00    0.00       1+1235    void std::__introsort_loop<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, long, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}, long, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}) [63]
-                                1235             void std::__introsort_loop<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, long, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}, long, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}) [63]
+                0.00    0.00       1/1           Abucus::Abucus(CLegal&, Placement&) [1]
+[58]     0.0    0.00    0.00       1         void std::__insertion_sort<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}) [58]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -401,21 +369,19 @@ notice and this notice are preserved.
 
 Index by function name
 
-  [31] _GLOBAL__sub_I__Z14handleArgumentRKiPPcR15CParamPlacement [46] BookshelfParser::readNodesFile(std::string) [9] std::vector<Cluster, std::allocator<Cluster> >::operator=(std::vector<Cluster, std::allocator<Cluster> > const&)
-  [32] _GLOBAL__sub_I__Z6formatPKcz [47] BookshelfParser::BookshelfParser(Placement&) [27] void std::vector<Rectangle, std::allocator<Rectangle> >::_M_emplace_back_aux<Rectangle const&>(Rectangle const&)
-  [33] _GLOBAL__sub_I__ZN14GnuplotPlotterC2Ev [20] GnuplotLivePlotter::addRectangle(Rectangle const&) [6] void std::vector<Pin*, std::allocator<Pin*> >::_M_emplace_back_aux<Pin* const&>(Pin* const&)
-  [34] _GLOBAL__sub_I__ZN15BookshelfParserC2ER9Placement [48] GnuplotLivePlotter::show() [22] void std::vector<Module*, std::allocator<Module*> >::_M_emplace_back_aux<Module*>(Module*&&)
-  [35] _GLOBAL__sub_I__ZN18GnuplotLivePlotterC2Ev [49] GnuplotLivePlotter::setTitle(std::string) [58] std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > >::_M_default_append(unsigned long)
-  [36] _GLOBAL__sub_I__ZN6CLegal5solveEv [30] GnuplotLivePlotter::GnuplotLivePlotter() [59] std::vector<double, std::allocator<double> >::_M_default_append(unsigned long)
-  [37] _GLOBAL__sub_I__ZN9PlacementC2Ev [50] GnuplotLivePlotter::~GnuplotLivePlotter() [24] void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&)
-  [38] _GLOBAL__sub_I_gArg     [2] Abucus::Abucus(CLegal&, Placement&) [25] void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double>(double&&)
-  [39] _GLOBAL__sub_I_param   [51] CLegal::check()        [18] void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int const&>(unsigned int const&)
-  [40] getFileName(std::string) [52] Placement::updateDesignStatistics() [28] void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int&>(unsigned int&)
-  [19] GnuplotPlotter::addRectangle(Rectangle const&) [8] Placement::connectPinsWithModulesAndNets() [5] std::vector<unsigned int, std::allocator<unsigned int> >::operator=(std::vector<unsigned int, std::allocator<unsigned int> > const&)
-  [41] GnuplotPlotter::outputPlotFile(std::string) [53] std::vector<Net, std::allocator<Net> >::_M_default_append(unsigned long) [60] std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_unique_pos(std::string const&)
-  [42] GnuplotPlotter::setTitle(std::string) [54] std::vector<Pin, std::allocator<Pin> >::_M_default_append(unsigned long) [21] std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, unsigned int> >, std::string const&)
-  [43] GnuplotPlotter::GnuplotPlotter() [55] std::vector<Row, std::allocator<Row> >::_M_default_append(unsigned long) [61] std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned int> >*)
-  [44] BookshelfParser::readPlFile(std::string) [29] void std::vector<Row, std::allocator<Row> >::_M_emplace_back_aux<Row const&>(Row const&) [62] void std::__insertion_sort<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1})
-   [1] BookshelfParser::readAuxFile(std::string) [56] std::vector<Row, std::allocator<Row> >::operator=(std::vector<Row, std::allocator<Row> > const&) [26] void std::__introsort_loop<__gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, long, bool (*)(Module*, Module*)>(__gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, __gnu_cxx::__normal_iterator<Module**, std::vector<Module*, std::allocator<Module*> > >, long, bool (*)(Module*, Module*)) [clone .constprop.237]
-  [45] BookshelfParser::readSclFile(std::string) [57] std::vector<Module, std::allocator<Module> >::_M_default_append(unsigned long) [63] void std::__introsort_loop<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, long, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1}, long, Abucus::sort_module_order()::{lambda(unsigned int, unsigned int)#1})
-   [7] BookshelfParser::readNetsFile(std::string) [23] void std::vector<Cluster, std::allocator<Cluster> >::_M_emplace_back_aux<unsigned long>(unsigned long&&)
+  [33] _GLOBAL__sub_I__Z14handleArgumentRKiPPcR15CParamPlacement [46] BookshelfParser::readSclFile(std::string) [6] std::vector<Cluster, std::allocator<Cluster> >::operator=(std::vector<Cluster, std::allocator<Cluster> > const&)
+  [34] _GLOBAL__sub_I__Z6formatPKcz [5] BookshelfParser::readNetsFile(std::string) [28] void std::vector<Rectangle, std::allocator<Rectangle> >::_M_emplace_back_aux<Rectangle const&>(Rectangle const&)
+  [35] _GLOBAL__sub_I__ZN14GnuplotPlotterC2Ev [10] BookshelfParser::readNodesFile(std::string) [21] void std::vector<Pin*, std::allocator<Pin*> >::_M_emplace_back_aux<Pin* const&>(Pin* const&)
+  [36] _GLOBAL__sub_I__ZN15BookshelfParserC2ER9Placement [47] BookshelfParser::BookshelfParser(Placement&) [31] std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > >::_M_default_append(unsigned long)
+  [37] _GLOBAL__sub_I__ZN18GnuplotLivePlotterC2Ev [48] GnuplotLivePlotter::GnuplotLivePlotter() [55] std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > >::operator=(std::vector<std::vector<Cluster, std::allocator<Cluster> >, std::allocator<std::vector<Cluster, std::allocator<Cluster> > > > const&)
+  [38] _GLOBAL__sub_I__ZN6CLegal5solveEv [1] Abucus::Abucus(CLegal&, Placement&) [32] std::vector<double, std::allocator<double> >::_M_default_append(unsigned long)
+  [39] _GLOBAL__sub_I__ZN9PlacementC2Ev [12] Placement::outputBookshelfFormat(std::string) [26] void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&)
+  [40] _GLOBAL__sub_I_gArg    [49] Placement::updateDesignStatistics() [27] void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double>(double&&)
+  [41] _GLOBAL__sub_I_param    [7] Placement::connectPinsWithModulesAndNets() [22] void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int const&>(unsigned int const&)
+  [42] getFileName(std::string) [50] std::vector<Net, std::allocator<Net> >::_M_default_append(unsigned long) [29] void std::vector<unsigned int, std::allocator<unsigned int> >::_M_emplace_back_aux<unsigned int&>(unsigned int&)
+  [23] GnuplotPlotter::addRectangle(Rectangle const&) [51] std::vector<Pin, std::allocator<Pin> >::_M_default_append(unsigned long) [8] std::vector<unsigned int, std::allocator<unsigned int> >::operator=(std::vector<unsigned int, std::allocator<unsigned int> > const&)
+  [43] GnuplotPlotter::outputPlotFile(std::string) [52] std::vector<Row, std::allocator<Row> >::_M_default_append(unsigned long) [56] std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_unique_pos(std::string const&)
+  [44] GnuplotPlotter::setTitle(std::string) [30] void std::vector<Row, std::allocator<Row> >::_M_emplace_back_aux<Row const&>(Row const&) [24] std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, unsigned int> >, std::string const&)
+  [45] GnuplotPlotter::GnuplotPlotter() [53] std::vector<Row, std::allocator<Row> >::operator=(std::vector<Row, std::allocator<Row> > const&) [57] std::_Rb_tree<std::string, std::pair<std::string const, unsigned int>, std::_Select1st<std::pair<std::string const, unsigned int> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned int> >*)
+   [9] BookshelfParser::readPlFile(std::string) [54] std::vector<Module, std::allocator<Module> >::_M_default_append(unsigned long) [58] void std::__insertion_sort<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1})
+   [3] BookshelfParser::readAuxFile(std::string) [25] void std::vector<Cluster, std::allocator<Cluster> >::_M_emplace_back_aux<unsigned long>(unsigned long&&) [11] void std::__introsort_loop<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, long, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1}, long, Abucus::sort_module_order(double)::{lambda(unsigned int, unsigned int)#1})

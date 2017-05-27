@@ -95,8 +95,8 @@ public:
         setBestPosition_reverse();
         _cLegal.setLegalResult();
         double _reverse_displacement = _cLegal.totalDisplacement();
-        cout << "_reverse_displacement:" << _reverse_displacement << endl;
-        cout << "_forward_displacement:" << _forward_displacement << endl;
+        // cout << "_reverse_displacement:" << _reverse_displacement << endl;
+        // cout << "_forward_displacement:" << _forward_displacement << endl;
         if ( _forward_displacement < _reverse_displacement )
         {
             _clusters = _forward_clusters_sol;
@@ -373,11 +373,11 @@ bool CLegal::solve()
 
     // gp.show();
     // cin.get();
+    cout<< "total displacement: " << totalDisplacement() << endl;
+    cout << "Legal time: " << (double)(clock()-t0)/CLOCKS_PER_SEC << endl;
     return true;
     if( check() )
     {
-        cout<< "total displacement: " << totalDisplacement() << endl;
-        cout << "Legal time: " << (double)(clock()-t0)/CLOCKS_PER_SEC << endl;
         return true;
     }
     return false;
@@ -388,7 +388,6 @@ bool sortModule( Module* a, Module* b)
 {
     return a->x() < b->x();
 }
-
 bool CLegal::check()
 {
     cout << "start check" << endl;
@@ -482,7 +481,6 @@ bool CLegal::check()
         return true;
     }
 }
-
 double CLegal::totalDisplacement()
 {
     double totaldis = 0;
