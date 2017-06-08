@@ -60,12 +60,14 @@ class BStarTree : public FloorPlanning
     void            printBST();
     double          cost();
     unsigned        calcArea();
-    unsigned        calcHPWL();
+    double          calcHPWL();
     void            randomAddAsChild( Node*, Node* );
     double          runningCost();
     double          realCost();
     void            updateIsFeasibleQueue();
+    void            setPlotFlag() {_plot = true;};
 
+    bool            _plot;
     double          alphaBase;
     double          alpha;
     double          beta;
@@ -76,7 +78,7 @@ class BStarTree : public FloorPlanning
     perturbAction*  action;
     double          runningAlpha;
     unsigned        area;
-    unsigned        HPWL;
+    double          HPWL;
     unsigned        MIN_W;
     unsigned        MIN_H;
     unsigned        Anorm;

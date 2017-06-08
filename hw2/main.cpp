@@ -23,12 +23,18 @@ int main( int argc, char* argv[] )
     blockFile = "./input_pa2/ami33.block";
     netFile = "./input_pa2/ami33.nets";
     BST.alpha = 0.5;
-  } else {
+  } else if( argc == 5 ) {
     BST.alpha = stod( (string)argv[1] );
     blockFile = (string)argv[2];
     netFile = (string)argv[3];
     outputPath = (string)argv[4];
     cout << " blockFile::" << blockFile << endl;
+  } else if( argc == 6 ) {
+    BST.alpha = stod( (string)argv[1] );
+    blockFile = (string)argv[2];
+    netFile = (string)argv[3];
+    outputPath = (string)argv[4];
+    BST.setPlotFlag();
   }
   BST.parse( blockFile, netFile );
   BST.randonConstructTree();

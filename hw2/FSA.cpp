@@ -104,7 +104,6 @@ void FSA::randomPerturb( bool useRealCost ) {
       continue;
     }
     if ( costAfterPerturb < bestCost && tree->isFeasible ) {
-      cout << "BEST!!" << endl;
       bestCost = (double)tree->realCost();
       bestIter = iter;
       bestTreeNodesPointer = tree->Nodes;
@@ -127,15 +126,24 @@ void FSA::SA() {
   costBeforePerturb = originCost = tree->runningCost();
   bool useRealCost = false;
   unsigned realCostTunningCounter = 0;
+  double bc = 0;//best cost
+  unsigned notImproveCounter = 0;
 	while( 1 ) {
     if ( iter == 0 )
       HighTempratureRandomSearch();
     else if ( !bestTreeNodes.empty() ) {
       if ( !useRealCost ) {
         useRealCost = true;
-        T1 *= 5;
+        T1 *= 10;
       }
-      if ( realCostTunningCounter++ == 2*k ) {
+      if ( bestCost != bc ) {
+        notImproveCounter = 0;
+        bc = bestCost;
+      }
+      // tree->printBST();
+      // cin.get();
+      // return;
+      if ( notImproveCounter++ == 20*k ) {
         return;
       }
     }
@@ -167,10 +175,9 @@ void FSA::SA() {
 	}
 }
 
-void FSA::output( string& ) {
-  // cout << "output" << endl;
+void FSA::output( string& outputPath ) {
+  cout << "outputPath: " << outputPath << endl;
   tree->Nodes = bestTreeNodesPointer;
-  // cout << "output2" << endl;
   assert(!bestTreeNodes.empty());
   for( unsigned i=0; i<tree->Nodes.size(); ++i )
     *(tree->Nodes[i]) = bestTreeNodes[i];
@@ -184,6 +191,7 @@ void FSA::output( string& ) {
   cout << "Cost: " << tree->realCost() << endl;
   assert(  (double)tree->realCost() == bestCost );
   ofstream result;
+  result.open( outputPath, ofstream::out );
   result << tree->realCost() << endl;
   result << tree->HPWL << endl;
   result << tree->area << endl;
@@ -195,13 +203,14 @@ void FSA::output( string& ) {
     H = max( H, b->posy + b->H );
   }
   result << W << " " << H << endl;
-  result << (clock()-startTime)/CLOCKS_PER_SEC << endl;
+  result << (double)(clock()-startTime)/CLOCKS_PER_SEC << endl;
   cout << "Running time:" << (double)(clock()-startTime)/CLOCKS_PER_SEC << endl;
   cout << "bestIter " << bestIter << endl;
   tree->printBST();
   for ( unsigned i=0; i<tree->nBlocks; ++i ) {
     Block* b = tree->Blocks[i];
-    result << b->name << " " << b->posx << " " << b->posy
+    result << b->name << " " << b->posx << " " << b->posy << " "
     << b->posx + b->W << " " << b->posy + b->H << endl;
   }
+  result.close();
 }

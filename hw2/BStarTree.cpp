@@ -4,8 +4,14 @@
 #include <ctime>   
 #include <cmath>
 #include <math.h> 
-#include "../gnuplot-iostream/gnuplot-iostream.h"
-
+#include "gnuplot-iostream/gnuplot-iostream.h"
+#include "FSA.h"
+#include <cstdlib>
+#include <math.h>
+#include <cassert>
+#include <cfloat>
+#include <fstream>
+#include <algorithm>
 Node& Node::operator = ( const Node& n ) {
   block = n.block;
   child[0] = n.child[0];
@@ -30,6 +36,7 @@ void YContour::insertBack( YContour* yc )
 
 BStarTree::BStarTree():FloorPlanning() {
   action = new perturbAction( this );
+  _plot = false;
 }
 
 void BStarTree::randonConstructTree() {
@@ -236,23 +243,29 @@ unsigned BStarTree::calcArea() {
   area = maxX*maxY;
   return area;
 }
-unsigned BStarTree::calcHPWL() {
+double BStarTree::calcHPWL() {
   HPWL = 0;
   for ( unsigned i=0; i<nNets; ++i ) {
-    unsigned minX = Nets[i]->terminals[0]->posx;
-    unsigned minY = Nets[i]->terminals[0]->posy;
-    unsigned maxX = Nets[i]->terminals[0]->posx;
-    unsigned maxY = Nets[i]->terminals[0]->posy;
+    double minX = DBL_MAX;
+    double minY = DBL_MAX;
+    double maxX = 0;
+    double maxY = 0;
     for ( unsigned j=0, n = Nets[i]->terminals.size(); j < n; ++j ) {
       Terminal* t = Nets[i]->terminals[j];
-      minX = min( minX, t->posx );
-      minY = min( minY, t->posy );
+      // minX = min( minX, t->posx );
+      // minY = min( minY, t->posy );
       if ( ! (t->isTerminal) ) {
-        maxX = max( maxX, t->posx + ((Block*)t)->W );
-        maxY = max( maxY, t->posy + ((Block*)t)->H );
-      } else {
-        maxX = max( maxX, t->posx );
-        maxY = max( maxY, t->posy );
+        maxX = max( maxX, t->posx + (double)((Block*)t)->W/2 );
+        maxY = max( maxY, t->posy + (double)((Block*)t)->H/2 );
+        minX = min( minX, t->posx + (double)((Block*)t)->W/2 );
+        minY = min( minY, t->posy + (double)((Block*)t)->H/2 );
+      } 
+      else {
+        maxX = max( maxX, (double)t->posx );
+        maxY = max( maxY, (double)t->posy );
+        minX = min( minX, (double)t->posx );
+        minY = min( minY, (double)t->posy );
+
       }
     }
     HPWL +=  maxX-minX + maxY - minY;
@@ -262,10 +275,11 @@ unsigned BStarTree::calcHPWL() {
 
 double BStarTree::runningCost() {
   calcArea();
-  calcHPWL(); 
+  // calcHPWL(); 
   // double cost = runningAlpha*area/Anorm + beta*HPWL/Wnorm;
   double areaCost = runningAlpha*area/Anorm;
-  double wireCost = beta*HPWL/Wnorm;
+  // double wireCost = beta*HPWL/Wnorm;
+  double wireCost = 0;
   double ratioCost = pow( (double)W/H-(double)MIN_W/MIN_H, 2 );
   double cost =  areaCost + wireCost + ratioCost;
   return cost ;
@@ -279,6 +293,7 @@ double BStarTree::realCost() {
 }
 
 void BStarTree::printBST() {
+  if(!_plot) return;
   cout << "printBST" << endl;
   Gnuplot gp;
   gp << "set xrange [-1:" << 3*W << "]\nset yrange [-2:" << 3*H << "]\n";
