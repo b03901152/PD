@@ -1,0 +1,27 @@
+Dear all,
+
+The PA4 checker is available in the follows link:
+
+eda.ee.ntu.edu.tw/~yslu/pd17/checker
+
+Please use command line:
+
+./checker inputfileName outputfileName
+
+to run the checker. The checker will check whether the routing result has cycle, evaluate the number of total routed pins, and calculate the total wirelength.
+
+There is a good news: due to the algorithm I used for checker, you no longer need to trim the duplicated or overlapped wire segments. The checker will handle them automatically. But it is always good to have a clean output!
+
+The followings are some hints for this PA:
+
+H1. A legal routing result should be cycle-free, single-tree, and within boundary. Please note that the definition of wire connection is different from the one for ICCAD contest. The point-to-edge and edge-to-edge connection are both treated as connections.
+
+H2. The routing result will not be ranked unless it is legal and reaches 100% routability. The ranking factor includes wirelength and run time.
+
+H3. There will be hidden cases for this PA. The weights of different test cases are different. Please work hard on large test cases.
+
+If there is any question, feel free to email me!
+Thank you!
+
+BR,
+Yu-Sheng

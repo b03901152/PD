@@ -1,0 +1,1 @@
+./checker testbench/case1 output/output1
