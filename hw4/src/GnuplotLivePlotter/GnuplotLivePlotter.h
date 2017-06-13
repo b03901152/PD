@@ -93,11 +93,11 @@ public:
     void addLine( vector< vector<double> >& );
     void addPoint( double, double );
     void addLabel(double x,double y,string s) {
+        return;
         int num = stoi(s);
         if(num<=10) {
             fprintf(_fpipe,"set label '%s' at %f , %f\n",s.c_str(),x,y);
         }
-        return;
         // fprintf(_fpipe, "\n");
         // _gp << "set label \"" << s << "\" at " << x 
         // << ", " << y << endl;

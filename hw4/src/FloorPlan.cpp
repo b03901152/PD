@@ -10,7 +10,7 @@ void FloorPlan::parse(string& inputPath) {
        exit(1);
   }
   else
-      cout << "Read file " << inputPath << " successfully..." << endl; 
+      cout << "testbench: " << inputPath <<  endl; 
   string buf_str;
   unsigned buf_int;
   ifs >> buf_str >> buf_str;
@@ -84,7 +84,7 @@ void FloorPlan::output(string& outputPath) {
       }
     }
   }
-  unsigned wireLength = 0;
+  unsigned long long wireLength = 0;
   for(Edge* e: _graph._edges)
     wireLength += Vertex::dist(e->_v1,e->_v2);
   ofs << "WireLength = " << wireLength << endl;
@@ -99,5 +99,5 @@ void FloorPlan::output(string& outputPath) {
     ofs << " (" << v->x() << "," << v->y() << ") ("
     << u->x() << "," << u->y() << ")" << endl;
   }
-  cout << "output:" << outputPath << endl; 
+  // cout << "output path: " << outputPath << endl; 
 }

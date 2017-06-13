@@ -2,8 +2,7 @@
 #define FLOORPLAN_H
 #include "Graph/Graph.h"
 #include <string>
-class FloorPlan
-{
+class FloorPlan {
 friend class SpanningTree;
 friend class SteinerTree;
 public:

@@ -78,11 +78,16 @@ public:
     	int r2 = v1->y() - v2->y();
     	return abs(r1) + abs(r2);
     }
+    static bool same(Vertex* v1, Vertex* v2)
+    {
+    	return v1->x() == v2->x() && v1->y() == v2->y();
+    }
 	void setPos(unsigned x, unsigned y) { _x = x; _y = y; }
 // private:
 	unsigned					_ID;
 	unsigned 					_x;
 	unsigned 					_y;
+	bool 						_used;
 	vector<Edge*> 				_edges;
 };
 

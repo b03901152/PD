@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(Router)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -g -pg -std=c++11 -fopenmp -ffast-math")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -O3 -std=c++11 -fopenmp -ffast-math")
 
 add_executable(
 	Router
@@ -10,9 +10,9 @@ add_executable(
 	src/FloorPlan.cpp
 	src/SpanningTree.cpp
 	src/SteinerTree.cpp
+	src/SteinerTreeRect.cpp
 	src/Graph/Graph.cpp
 	src/GnuplotLivePlotter/GnuplotLivePlotter.cpp
-
 )
 
 find_package(Boost REQUIRED COMPONENTS system)

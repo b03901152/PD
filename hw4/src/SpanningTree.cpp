@@ -8,6 +8,8 @@ void SpanningTree::init() {
 }
 
 void SpanningTree::initGraph() {
+	_graph._vertices.clear();
+	_graph._edges.clear();
 	_graph._vertices.reserve(_pins.size());
 	_graph._edges.reserve(8*_pins.size());
 	for(Vertex* v:_pins)
@@ -15,6 +17,8 @@ void SpanningTree::initGraph() {
 }
 
 void SpanningTree::initMap() {
+	_sort_vec.clear();
+	_sort_reverse_vec.clear();
 	_sort_vec.reserve(_pins.size());
 	_sort_reverse_vec.reserve(_pins.size());
 	for (unsigned i = 0; i < _pins.size(); ++i) {
@@ -44,7 +48,6 @@ void SpanningTree::initMap() {
 }
 
 void SpanningTree::construnction() {
-	
 	init();
 	connect_neighbors_R8();
 	connect_neighbors_R1();

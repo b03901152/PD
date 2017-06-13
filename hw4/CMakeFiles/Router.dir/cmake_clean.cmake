@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Router.dir/src/FloorPlan.cpp.o"
   "CMakeFiles/Router.dir/src/SpanningTree.cpp.o"
   "CMakeFiles/Router.dir/src/SteinerTree.cpp.o"
+  "CMakeFiles/Router.dir/src/SteinerTreeRect.cpp.o"
   "CMakeFiles/Router.dir/src/Graph/Graph.cpp.o"
   "CMakeFiles/Router.dir/src/GnuplotLivePlotter/GnuplotLivePlotter.cpp.o"
   "Router.pdb"

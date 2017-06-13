@@ -234,6 +234,30 @@ src/SteinerTree.cpp.s:
 	$(MAKE) -f CMakeFiles/Router.dir/build.make CMakeFiles/Router.dir/src/SteinerTree.cpp.s
 .PHONY : src/SteinerTree.cpp.s
 
+src/SteinerTreeRect.o: src/SteinerTreeRect.cpp.o
+.PHONY : src/SteinerTreeRect.o
+
+# target to build an object file
+src/SteinerTreeRect.cpp.o:
+	$(MAKE) -f CMakeFiles/Router.dir/build.make CMakeFiles/Router.dir/src/SteinerTreeRect.cpp.o
+.PHONY : src/SteinerTreeRect.cpp.o
+
+src/SteinerTreeRect.i: src/SteinerTreeRect.cpp.i
+.PHONY : src/SteinerTreeRect.i
+
+# target to preprocess a source file
+src/SteinerTreeRect.cpp.i:
+	$(MAKE) -f CMakeFiles/Router.dir/build.make CMakeFiles/Router.dir/src/SteinerTreeRect.cpp.i
+.PHONY : src/SteinerTreeRect.cpp.i
+
+src/SteinerTreeRect.s: src/SteinerTreeRect.cpp.s
+.PHONY : src/SteinerTreeRect.s
+
+# target to generate assembly for a file
+src/SteinerTreeRect.cpp.s:
+	$(MAKE) -f CMakeFiles/Router.dir/build.make CMakeFiles/Router.dir/src/SteinerTreeRect.cpp.s
+.PHONY : src/SteinerTreeRect.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -282,6 +306,9 @@ help:
 	@echo "... src/SteinerTree.o"
 	@echo "... src/SteinerTree.i"
 	@echo "... src/SteinerTree.s"
+	@echo "... src/SteinerTreeRect.o"
+	@echo "... src/SteinerTreeRect.i"
+	@echo "... src/SteinerTreeRect.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

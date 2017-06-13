@@ -3,14 +3,12 @@
 #include <limits>
 #include "Graph/Graph.h"
 #include "FloorPlan.h"
-class Node
-{
+
+class Node {
 public:
 	Node(unsigned ID)
 	:_ID(ID), _parent(ID),_ancestor(ID),
-	_rank(0),_isBlack(false)
-	{};
-
+	_rank(0),_isBlack(false) {};
 
 	~Node(){};
 
@@ -23,12 +21,11 @@ public:
 	vector<vector<unsigned> > _lca_query;
 };
 
-
-class SteinerTree
-{
+class SteinerTree {
 public:
 	SteinerTree(FloorPlan& FP)
-	:_graph(FP._graph),_FP(FP),_root(NULL),_vertices(FP._graph._vertices),_edges(FP._graph._edges) {};
+	:_graph(FP._graph),_FP(FP),_root(NULL), _vertices(FP._graph._vertices),
+      _edges(FP._graph._edges) {};
 	~SteinerTree() {};
 	void construnction();
 	void Kruskal();
@@ -45,6 +42,10 @@ public:
 	void connect();
 	void tranformToRectLine();
 	void removeOverlap();
+	void rect();
+	void addSteinerPoints();
+	void addMSTEdge(Edge* e);
+	double& getMSTCost() {return _MST_cost;}
 private:
 	unsigned 					_counter;
 	Graph& 						_graph;
@@ -58,7 +59,7 @@ private:
 	vector<Vertex*>& 			_vertices;
 	vector<Edge*>& 				_edges;
 	vector<Edge*>				_MST;
-	GnuplotLivePlotter 			_gp;
+	double						_MST_cost;
 
 };
 
